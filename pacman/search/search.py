@@ -99,6 +99,7 @@ def depthFirstSearch(problem):
             print("final state :", statePos)
             print("nodesExplored :", nodesExplored)
             print("Final Path : ",stateDirection )
+            print("Final Cost :", stateCost)
             return stateDirection
         if not statePos in nodesExplored:
             nodesExplored.add(statePos)
@@ -112,7 +113,26 @@ def depthFirstSearch(problem):
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    nodeSuspended = util.Queue()
+    startState = (problem.getStartState(), [], 0)
+    nodeSuspended.push(startState)
+    nodesExplored = set()
+    while not nodeSuspended.isEmpty():
+        newState = nodeSuspended.pop()
+        statePos, stateDirection, stateCost = newState
+        if problem.isGoalState(statePos):
+            print("final state :", statePos)
+            print("nodesExplored :", nodesExplored)
+            print("Final Path : ",stateDirection )
+            print("Final Cost :", stateCost)
+            return stateDirection
+        if not statePos in nodesExplored:
+            nodesExplored.add(statePos)
+            for succPos, succDirection, succCost in problem.getSuccessors(statePos):
+                newCost = stateCost + succCost
+                newDirection = stateDirection + [succDirection]
+                nodeToBeSuspended = (succPos, newDirection, newCost)
+                nodeSuspended.push(nodeToBeSuspended)
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
