@@ -137,7 +137,26 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    nodeSuspended = util.PriorityQueue()
+    startState = (problem.getStartState(), [], 0)
+    nodeSuspended.push(startState, 0)
+    nodesExplored = set()
+    while not nodeSuspended.isEmpty():
+        newState = nodeSuspended.pop()
+        statePos, stateDirection, stateCost = newState
+        if problem.isGoalState(statePos):
+            print("final state :", statePos)
+            print("nodesExplored :", nodesExplored)
+            print("Final Path : ", stateDirection)
+            print("Final Cost :", stateCost)
+            return stateDirection
+        if not statePos in nodesExplored:
+            nodesExplored.add(statePos)
+            for succPos, succDirection, succCost in problem.getSuccessors(statePos):
+                newCost = stateCost + succCost
+                newDirection = stateDirection + [succDirection]
+                nodeToBeSuspended = (succPos, newDirection, newCost)
+                nodeSuspended.push(nodeToBeSuspended, newCost)
 
 def nullHeuristic(state, problem=None):
     """
@@ -149,7 +168,28 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    nodeSuspended = util.PriorityQueue()
+    startState = (problem.getStartState(), [], 0)
+    stateCost = 0 + heuristic(startState[0], problem)
+    nodeSuspended.push(startState, stateCost)
+    nodesExplored = set()
+    while not nodeSuspended.isEmpty():
+        newState = nodeSuspended.pop()
+        statePos, stateDirection, stateCost = newState
+        if problem.isGoalState(statePos):
+            print("final state :", statePos)
+            print("nodesExplored :", nodesExplored)
+            print("Final Path : ", stateDirection)
+            print("Final Cost :", stateCost)
+            return stateDirection
+        if not statePos in nodesExplored:
+            nodesExplored.add(statePos)
+            for succPos, succDirection, succCost in problem.getSuccessors(statePos):
+                newCost = stateCost + succCost
+                newDirection = stateDirection + [succDirection]
+                nodeToBeSuspended = (succPos, newDirection, newCost)
+                updatedCost = newCost + heuristic(nodeToBeSuspended[0], problem)
+                nodeSuspended.push(nodeToBeSuspended, updatedCost)
 
 
 # Abbreviations
