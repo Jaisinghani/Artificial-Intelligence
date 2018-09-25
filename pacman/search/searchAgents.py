@@ -303,8 +303,8 @@ class CornersProblem(search.SearchProblem):
         """
         "*** YOUR CODE HERE ***"
         "--------- Goal State will be acheived such that all the corners are removed i.e. explored from the state"
-        print(" Goal State :", state[1])
-        print("determining Goal State :", len(state[1]))
+        #print(" Goal State :", state[1])
+        #print("determining Goal State :", len(state[1]))
         return len(state[1]) == 0
 
     def getSuccessors(self, state):
@@ -337,7 +337,7 @@ class CornersProblem(search.SearchProblem):
                 # remove corners eaten by that move
 
                 corners = tuple(x for x in state[1] if x != (nextx, nexty))
-                print("corners :", corners)
+                #print("corners :", corners)
                 successors.append((((nextx, nexty), corners), action, 1))
 
         self._expanded += 1 # DO NOT CHANGE
@@ -374,7 +374,11 @@ def cornersHeuristic(state, problem):
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
     "*** YOUR CODE HERE ***"
-    return 0 # Default to trivial solution
+    distances = [0]
+    for corner in state[1]:
+        distances.append(util.manhattanDistance(state[0], corner))
+
+    return max(distances)
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"

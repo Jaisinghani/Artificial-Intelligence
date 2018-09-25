@@ -178,7 +178,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
         statePos, stateDirection, stateCost = newState
         if problem.isGoalState(statePos):
             print("final state :", statePos)
-            print("nodesExplored :", nodesExplored)
+            #print("nodesExplored :", nodesExplored)
             print("Final Path : ", stateDirection)
             print("Final Cost :", stateCost)
             return stateDirection
