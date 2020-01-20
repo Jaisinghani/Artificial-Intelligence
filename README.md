@@ -5,7 +5,7 @@ The project also covers building an intelligent agent using Markov Decision Proc
 # Search Algorithms
 
 # Depth First Search (DFS):
-![dfs](https://github.com/Jaisinghani/Artificial-Intelligence/blob/master/pacman/imagesdfs.gif)
+![dfs](https://github.com/Jaisinghani/Artificial-Intelligence/blob/master/pacman/images/dfs.gif)
 
 # Breadth First Search (BFS):
 ![bfs](https://github.com/Jaisinghani/Artificial-Intelligence/blob/master/pacman/images/bfs.gif)
