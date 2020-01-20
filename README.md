@@ -5,22 +5,22 @@ The project also covers building an intelligent agent using Markov Decision Proc
 # Search Algorithms
 
 # Depth First Search (DFS):
-![dfs](https://github.com/Jaisinghani/Artificial-Intelligence/tree/master/pacman/imagesdfs.gif)
+![dfs](https://github.com/Jaisinghani/Artificial-Intelligence/pacman/imagesdfs.gif)
 
 # Breadth First Search (BFS):
-![bfs](https://github.com/Jaisinghani/Artificial-Intelligence/tree/master/pacman/images/bfs.gif)
+![bfs](https://github.com/Jaisinghani/Artificial-Intelligence/pacman/images/bfs.gif)
 
 # A* search - mahattan heuristic
-![astar](https://github.com/Jaisinghani/Artificial-Intelligence/tree/master/pacman/images/astar.gif)
+![astar](https://github.com/Jaisinghani/Artificial-Intelligence/pacman/images/astar.gif)
 
 # Markov Decision Process
 
-# value iterations
+# Value Iterations
 
-![vi](https://github.com/Jaisinghani/Artificial-Intelligence/tree/master/pacman/images/vi.gif)
+![vi](https://github.com/Jaisinghani/Artificial-Intelligence/pacman/images/vi.gif)
 
-![vi](https://github.com/Jaisinghani/Artificial-Intelligence/tree/master/pacman/images/vi3.JPG)
+![vi](https://github.com/Jaisinghani/Artificial-Intelligence/pacman/images/vi3.JPG)
 
 # q-learning
-![qlearning](https://github.com/Jaisinghani/Artificial-Intelligence/tree/master/pacman/images/qlearning.gif)
+![qlearning](https://github.com/Jaisinghani/Artificial-Intelligence/pacman/images/qlearning.gif)
 
