@@ -19,7 +19,7 @@ The project also covers building an intelligent agent using Markov Decision Proc
 
 ![vi](https://github.com/Jaisinghani/Artificial-Intelligence/blob/master/pacman/images/vi.gif)
 
-![vi](https://github.com/Jaisinghani/Artificial-Intelligence/blob/master/pacman/images/vi3.JPG)
+![vi](https://github.com/Jaisinghani/Artificial-Intelligence/blob/master/pacman/images/vi3.jpeg)
 
 # q-learning
 ![qlearning](https://github.com/Jaisinghani/Artificial-Intelligence/blob/master/pacman/images/qlearning.gif)
